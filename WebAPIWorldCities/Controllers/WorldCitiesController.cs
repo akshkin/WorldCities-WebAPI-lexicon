@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Models;
 using WebAPIWorldCities.Data;
 using WebAPIWorldCities.DTOs;
 using WebAPIWorldCities.Interfaces;
+using WebAPIWorldCities.Mappers;
 
 namespace WebAPIWorldCities.Controllers
 {
@@ -34,6 +36,16 @@ namespace WebAPIWorldCities.Controllers
             if (city == null) return NotFound($"City with id {id} does not exist");
 
             return Ok(city);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<WorldCityDto>> CreateCity(CreateWorldCityDto cityDto)
+        {
+            var city = cityDto.ToCityFromDto();
+
+            await _worldCityRepo.CreateCity(city);
+
+            return CreatedAtAction(nameof(GetCityById), new { id = city.CityId  }, city.ToWorldCityDto());
         }
     }
 }

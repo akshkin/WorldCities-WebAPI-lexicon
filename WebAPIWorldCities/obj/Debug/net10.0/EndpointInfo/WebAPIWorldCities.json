@@ -80,6 +80,52 @@
             }
           }
         }
+      },
+      "post": {
+        "tags": [
+          "WorldCities"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateWorldCityDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateWorldCityDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateWorldCityDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorldCityDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorldCityDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorldCityDto"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/api/cities/{id}": {
@@ -120,32 +166,38 @@
             }
           }
         }
-      },
-      "delete": {
-        "tags": [
-          "WorldCities"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       }
     }
   },
   "components": {
     "schemas": {
+      "CreateWorldCityDto": {
+        "required": [
+          "cityName",
+          "country",
+          "population"
+        ],
+        "type": "object",
+        "properties": {
+          "cityName": {
+            "maxLength": 100,
+            "minLength": 2,
+            "type": "string"
+          },
+          "country": {
+            "maxLength": 100,
+            "minLength": 2,
+            "type": "string"
+          },
+          "population": {
+            "maximum": 2147483647,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "WeatherForecast": {
         "type": "object",
         "properties": {

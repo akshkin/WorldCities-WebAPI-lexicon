@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Models;
 using WebAPIWorldCities.Data;
 using WebAPIWorldCities.DTOs;
 using WebAPIWorldCities.Interfaces;
@@ -34,4 +35,10 @@ public class WorldCityRepository : IWorldCityRepository
 
     }
 
+    public async Task<WorldCity> CreateCity(WorldCity city)
+    {
+        await _context.WorldCities.AddAsync(city);
+        await _context.SaveChangesAsync();
+        return city;
+    }
 }
