@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebAPIWorldCities.Data;
+using WebAPIWorldCities.Interfaces;
+using WebAPIWorldCities.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddScoped<IWorldCityRepository, WorldCityRepository>();
 
 var app = builder.Build();
 
