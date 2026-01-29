@@ -45,7 +45,18 @@ namespace WebAPIWorldCities.Controllers
 
             await _worldCityRepo.CreateCity(city);
 
-            return CreatedAtAction(nameof(GetCityById), new { id = city.CityId  }, city.ToWorldCityDto());
+            return CreatedAtAction(nameof(GetCityById), new { id = city.CityId }, city.ToWorldCityDto());
+        }
+
+        //UPDATE city using post method
+        [HttpPost("update/{id}")]
+        public async Task<ActionResult<WorldCityDto>> UpdateCity(int id,  [FromBody] UpdateCityDto cityDto)
+        {
+            var existingCity = await _worldCityRepo.UpdateCity(id, cityDto);
+
+            if (existingCity == null) return NotFound($"City with {id} does not exist");
+
+            return Ok(existingCity.ToWorldCityDto());
         }
     }
 }

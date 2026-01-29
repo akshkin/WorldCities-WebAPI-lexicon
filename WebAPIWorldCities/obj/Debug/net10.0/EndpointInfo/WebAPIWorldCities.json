@@ -167,11 +167,97 @@
           }
         }
       }
+    },
+    "/api/cities/update/{id}": {
+      "post": {
+        "tags": [
+          "WorldCities"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCityDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCityDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCityDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorldCityDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorldCityDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorldCityDto"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
       "CreateWorldCityDto": {
+        "required": [
+          "cityName",
+          "country",
+          "population"
+        ],
+        "type": "object",
+        "properties": {
+          "cityName": {
+            "maxLength": 100,
+            "minLength": 2,
+            "type": "string"
+          },
+          "country": {
+            "maxLength": 100,
+            "minLength": 2,
+            "type": "string"
+          },
+          "population": {
+            "maximum": 2147483647,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateCityDto": {
         "required": [
           "cityName",
           "country",

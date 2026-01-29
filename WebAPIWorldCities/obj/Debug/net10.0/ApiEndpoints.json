@@ -72,6 +72,37 @@
     ]
   },
   {
+    "ContainingType": "WebAPIWorldCities.Controllers.WorldCitiesController",
+    "Method": "UpdateCity",
+    "RelativePath": "api/cities/update/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "cityDto",
+        "Type": "WebAPIWorldCities.DTOs.UpdateCityDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIWorldCities.DTOs.WorldCityDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "WebAPIWorldCities.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

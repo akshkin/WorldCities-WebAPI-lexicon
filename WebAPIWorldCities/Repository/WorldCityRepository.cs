@@ -41,4 +41,19 @@ public class WorldCityRepository : IWorldCityRepository
         await _context.SaveChangesAsync();
         return city;
     }
+
+    public async Task<WorldCity?> UpdateCity(int id, UpdateCityDto city)
+    {
+        var existingCity = await _context.WorldCities.FirstOrDefaultAsync(c => c.CityId == id);
+
+        if (existingCity == null) return null;
+
+        existingCity.CityName = city.CityName;
+        existingCity.Country = city.Country;
+        existingCity.Population = city.Population;
+
+        await _context.SaveChangesAsync();
+
+        return existingCity;
+    }
 }

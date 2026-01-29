@@ -10,4 +10,6 @@ public interface IWorldCityRepository
     public Task<WorldCityDto?> GetById(int id);
 
     public Task<WorldCity> CreateCity(WorldCity city);
+
+    public Task<WorldCity?> UpdateCity(int id, UpdateCityDto cityDto);
 }
