@@ -31,7 +31,7 @@ namespace WebAPIWorldCities.Controllers
         {
             var city = await _worldCityRepo.GetById(id);
 
-            if (city == null) return NotFound($"City with id {id} does not exist");
+            if (city == null) return NotFound($"City with id: {id} does not exist");
 
             return Ok(city);
         }
@@ -52,7 +52,7 @@ namespace WebAPIWorldCities.Controllers
         {
             var existingCity = await _worldCityRepo.UpdateCity(id, cityDto);
 
-            if (existingCity == null) return NotFound($"City with {id} does not exist");
+            if (existingCity == null) return NotFound($"City with id: {id} does not exist");
 
             return Ok(existingCity.ToWorldCityDto());
         }
@@ -61,9 +61,9 @@ namespace WebAPIWorldCities.Controllers
         [HttpPost("delete/{id}")]
         public async Task<ActionResult> DeleteCity(int id) 
         {
-            var city  = _worldCityRepo.DeleteCity(id);
+            var city  = await _worldCityRepo.DeleteCity(id);
 
-            if (city == null) return NotFound($"City with {id} does not exist" );
+            if (city == null) return NotFound($"City with id:{id} does not exist" );
 
             return Ok("Successfully deleted city");
         }
