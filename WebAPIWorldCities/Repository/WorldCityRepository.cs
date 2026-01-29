@@ -23,4 +23,15 @@ public class WorldCityRepository : IWorldCityRepository
 
         return citiesDto;
     }
+
+    public async Task<WorldCityDto?> GetById(int id)
+    {
+        var city = await _context.WorldCities.FindAsync(id);
+
+        if (city == null) return null;
+
+        return city.ToWorldCityDto();
+
+    }
+
 }

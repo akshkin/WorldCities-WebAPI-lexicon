@@ -20,6 +20,48 @@
     ]
   },
   {
+    "ContainingType": "WebAPIWorldCities.Controllers.WorldCitiesController",
+    "Method": "GetCityById",
+    "RelativePath": "api/cities/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIWorldCities.DTOs.WorldCityDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIWorldCities.Controllers.WorldCitiesController",
+    "Method": "DeleteWorldCity",
+    "RelativePath": "api/cities/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebAPIWorldCities.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
