@@ -12,4 +12,6 @@ public interface IWorldCityRepository
     public Task<WorldCity> CreateCity(WorldCity city);
 
     public Task<WorldCity?> UpdateCity(int id, UpdateCityDto cityDto);
+
+    public Task<WorldCity?> DeleteCity(int id);
 }

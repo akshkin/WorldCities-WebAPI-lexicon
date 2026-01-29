@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Models;
-using WebAPIWorldCities.Data;
 using WebAPIWorldCities.DTOs;
 using WebAPIWorldCities.Interfaces;
 using WebAPIWorldCities.Mappers;
@@ -57,6 +55,17 @@ namespace WebAPIWorldCities.Controllers
             if (existingCity == null) return NotFound($"City with {id} does not exist");
 
             return Ok(existingCity.ToWorldCityDto());
+        }
+
+        //DELETE city using post method
+        [HttpPost("delete/{id}")]
+        public async Task<ActionResult> DeleteCity(int id) 
+        {
+            var city  = _worldCityRepo.DeleteCity(id);
+
+            if (city == null) return NotFound($"City with {id} does not exist" );
+
+            return Ok("Successfully deleted city");
         }
     }
 }

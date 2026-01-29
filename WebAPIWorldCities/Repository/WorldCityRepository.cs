@@ -56,4 +56,17 @@ public class WorldCityRepository : IWorldCityRepository
 
         return existingCity;
     }
+
+    public async Task<WorldCity?> DeleteCity(int id)
+    {
+        var city = await _context.WorldCities.FirstOrDefaultAsync(c => c.CityId == id);
+
+        if (city == null) return null;
+
+        _context.WorldCities.Remove(city);
+
+        await _context.SaveChangesAsync();
+
+        return city;
+    }
 }
