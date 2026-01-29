@@ -2,6 +2,7 @@
 using Models;
 using WebAPIWorldCities.Data;
 using WebAPIWorldCities.DTOs;
+using WebAPIWorldCities.Helpers;
 using WebAPIWorldCities.Interfaces;
 using WebAPIWorldCities.Mappers;
 
@@ -16,11 +17,42 @@ public class WorldCityRepository : IWorldCityRepository
         _context = context;
     }
 
-    public async Task<IEnumerable<WorldCityDto>> GetAllCities()
+    public async Task<IEnumerable<WorldCityDto>> GetAllCities(QueryObject query)
     {
-        var cities = await _context.WorldCities.ToListAsync();
+        var cities = _context.WorldCities.AsQueryable();
 
-        var citiesDto = cities.Select(c => c.ToWorldCityDto());
+        if (!string.IsNullOrEmpty(query.Name))
+        {
+            cities = cities.Where(c => c.CityName.Contains(query.Name));
+        }
+
+        if (!string.IsNullOrEmpty(query.Country))
+        {
+            cities = cities.Where(c => c.Country.Contains(query.Country));
+        }
+
+        if (query.PopulationGreaterThan != null)
+        {
+            cities = cities.Where(c => c.Population >  query.PopulationGreaterThan);
+        }
+
+        if (query.SortBy != null) 
+        {
+            cities = query.SortBy switch
+            {
+                CitySortOption.PopulationDesc => cities.OrderByDescending(c => c.Population),
+                CitySortOption.PopulationAsc => cities.OrderBy(c => c.Population),
+                CitySortOption.NameDesc => cities.OrderByDescending(c => c.CityName),
+                CitySortOption.NameAsc=> cities.OrderBy(c => c.CityName),
+                CitySortOption.CountryDesc => cities.OrderByDescending(c => c.Country),
+                CitySortOption.CountryAsc => cities.OrderBy(c => c.Country),
+                _ => cities.OrderByDescending(c => c.Population)
+            };
+        }
+
+        var skipNumber = (query.PageNumber - 1) * query.PageSize;
+
+        var citiesDto = cities.Select(c => c.ToWorldCityDto()).Skip(skipNumber).Take(query.PageSize);
 
         return citiesDto;
     }
