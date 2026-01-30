@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebAPIWorldCities.Data;
 using WebAPIWorldCities.DTOs.Country;
 using WebAPIWorldCities.Interfaces;
 using WebAPIWorldCities.Mappers;
 using WebAPIWorldCities.Models;
-using WebAPIWorldCities.Repository;
 
 namespace WebAPIWorldCities.Controllers
 {
@@ -49,25 +42,32 @@ namespace WebAPIWorldCities.Controllers
 
         // UPDATE a country using POST
        [HttpPost("update/{id}")]
-        public async Task<IActionResult> PUpdateCountry(int id, UpdateCountryDto countryDto)
+        public async Task<IActionResult> UpdateCountry(int id, UpdateCountryDto countryDto)
         {
-            var existingCountry = await _countryRepo.UpdateCountry(id, countryDto);
+            try
+            {
+                var existingCountry = await _countryRepo.UpdateCountry(id, countryDto);
 
-            if (existingCountry == null) return NotFound($"Country with id: {id} not found OR a country with name {countryDto.CountryName} already exists" );
+                if (existingCountry == null) return NotFound($"Country with id: {id} not found.");
 
-            return Ok(existingCountry.ToCountryDto());
+                return Ok(existingCountry.ToCountryDto());
+            }
+            catch (Exception ex) 
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // POST: api/Countries
         [HttpPost]
-        public async Task<ActionResult<Country>> PostCountry(CreateCountryDto countryDto)
+        public async Task<ActionResult<Country>> CreateCountry(CreateCountryDto countryDto)
         {
             var country = await _countryRepo.CreateCountry(countryDto);
            
             return CreatedAtAction(nameof(GetCountry), new { id = country.CountryId }, country.ToCountryDto());
         }
 
-        // DELETE: api/Countries/5
+        // DELETE a country using POST 
         [HttpPost("delete/{id}")]
         public async Task<IActionResult> DeleteCountry(int id)
         {
@@ -88,10 +88,5 @@ namespace WebAPIWorldCities.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
-            //private bool CountryExists(int id)
-            //{
-            //    return _context.Countries.Any(e => e.CountryId == id);
-            //}
     }
 }

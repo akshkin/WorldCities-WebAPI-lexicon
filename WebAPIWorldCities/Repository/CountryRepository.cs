@@ -65,7 +65,10 @@ public class CountryRepository : ICountryRepository
         //check if another country with same name exists
         var duplicateCountry = await _context.Countries.AnyAsync(c => c.CountryName == normalizedCountryName && c.CountryId != id);
 
-        if (duplicateCountry) return null;
+        if (duplicateCountry) 
+        {
+            throw new InvalidOperationException("Cannot update the name as a country with same name already exsists.");
+        }
 
         existingCountry.CountryName = normalizedCountryName;
         await _context.SaveChangesAsync();
