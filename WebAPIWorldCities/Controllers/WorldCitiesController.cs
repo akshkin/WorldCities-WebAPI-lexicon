@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebAPIWorldCities.DTOs;
+using WebAPIWorldCities.Helpers;
 using WebAPIWorldCities.Interfaces;
 using WebAPIWorldCities.Mappers;
 
@@ -19,9 +20,9 @@ namespace WebAPIWorldCities.Controllers
 
         // GET: api/WorldCities
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<WorldCityDto>>> GetAllCities()
+        public async Task<ActionResult<IEnumerable<WorldCityDto>>> GetAllCities([FromQuery] QueryObject query)
         {
-            var cities = await _worldCityRepo.GetAllCities();
+            var cities = await _worldCityRepo.GetAllCities(query);
 
             return Ok(cities);
         }

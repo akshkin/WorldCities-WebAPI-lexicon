@@ -10,6 +10,53 @@
         "tags": [
           "WorldCities"
         ],
+        "parameters": [
+          {
+            "name": "Country",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PopulationGreaterThan",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "SortBy",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/CitySortOption"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -214,6 +261,17 @@
   },
   "components": {
     "schemas": {
+      "CitySortOption": {
+        "enum": [
+          "NameAsc",
+          "NameDesc",
+          "CountryAsc",
+          "CountryDesc",
+          "PopulationAsc",
+          "PopulationDesc"
+        ],
+        "type": "string"
+      },
       "CreateWorldCityDto": {
         "required": [
           "cityName",

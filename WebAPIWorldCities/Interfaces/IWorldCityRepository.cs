@@ -1,11 +1,12 @@
 ﻿using Models;
 using WebAPIWorldCities.DTOs;
+using WebAPIWorldCities.Helpers;
 
 namespace WebAPIWorldCities.Interfaces;
 
 public interface IWorldCityRepository
 {
-    public Task<IEnumerable<WorldCityDto>> GetAllCities();
+    public Task<IEnumerable<WorldCityDto>> GetAllCities(QueryObject query);
 
     public Task<WorldCityDto?> GetById(int id);
 
