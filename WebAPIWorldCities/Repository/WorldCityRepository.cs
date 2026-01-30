@@ -1,10 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Humanizer;
+using Microsoft.EntityFrameworkCore;
 using Models;
 using WebAPIWorldCities.Data;
 using WebAPIWorldCities.DTOs;
 using WebAPIWorldCities.Helpers;
 using WebAPIWorldCities.Interfaces;
 using WebAPIWorldCities.Mappers;
+using WebAPIWorldCities.Models;
 
 namespace WebAPIWorldCities.Repository;
 
@@ -19,7 +21,7 @@ public class WorldCityRepository : IWorldCityRepository
 
     public async Task<IEnumerable<WorldCityDto>> GetAllCities(QueryObject query)
     {
-        var cities = _context.WorldCities.AsQueryable();
+        var cities = _context.WorldCities.Include(c => c.Country).AsQueryable();
 
         if (!string.IsNullOrEmpty(query.Name))
         {
@@ -44,8 +46,8 @@ public class WorldCityRepository : IWorldCityRepository
                 CitySortOption.PopulationAsc => cities.OrderBy(c => c.Population),
                 CitySortOption.NameDesc => cities.OrderByDescending(c => c.CityName),
                 CitySortOption.NameAsc=> cities.OrderBy(c => c.CityName),
-                CitySortOption.CountryDesc => cities.OrderByDescending(c => c.Country),
-                CitySortOption.CountryAsc => cities.OrderBy(c => c.Country),
+                CitySortOption.CountryDesc => cities.OrderByDescending(c => c.Country.CountryName),
+                CitySortOption.CountryAsc => cities.OrderBy(c => c.Country.CountryName),
                 _ => cities.OrderByDescending(c => c.Population)
             };
         }
@@ -59,7 +61,7 @@ public class WorldCityRepository : IWorldCityRepository
 
     public async Task<WorldCityDto?> GetById(int id)
     {
-        var city = await _context.WorldCities.FindAsync(id);
+        var city = await _context.WorldCities.Include(c => c.Country).FirstOrDefaultAsync(c => c.CountryId == id);
 
         if (city == null) return null;
 
@@ -67,22 +69,37 @@ public class WorldCityRepository : IWorldCityRepository
 
     }
 
-    public async Task<WorldCity> CreateCity(WorldCity city)
+    public async Task<WorldCity> CreateCity(CreateWorldCityDto cityDto)
     {
-        await _context.WorldCities.AddAsync(city);
+        var normalized = Utilities.Normalize(cityDto.Country);
+
+        var country = await GetOrCreateCountry(normalized);
+
+        var newCity = new WorldCity
+        {
+            CityName = cityDto.CityName,
+            Population = cityDto.Population,
+            CountryId = country.CountryId
+        };
+
+        await _context.WorldCities.AddAsync(newCity);
         await _context.SaveChangesAsync();
-        return city;
+        return newCity;
     }
 
-    public async Task<WorldCity?> UpdateCity(int id, UpdateCityDto city)
+    public async Task<WorldCity?> UpdateCity(int id, UpdateCityDto cityDto)
     {
         var existingCity = await _context.WorldCities.FirstOrDefaultAsync(c => c.CityId == id);
 
         if (existingCity == null) return null;
 
-        existingCity.CityName = city.CityName;
-        //existingCity.CountryId = city.CountryId;
-        existingCity.Population = city.Population;
+        var normalizedCountryName = Utilities.Normalize(cityDto.Country);
+
+        var country = await GetOrCreateCountry(normalizedCountryName);
+
+        existingCity.CityName = cityDto.CityName;
+        existingCity.CountryId = country.CountryId;
+        existingCity.Population = cityDto.Population;
 
         await _context.SaveChangesAsync();
 
@@ -101,4 +118,18 @@ public class WorldCityRepository : IWorldCityRepository
 
         return city;
     }
+
+    public async Task<Country> GetOrCreateCountry(string name)
+    {
+        var country = await _context.Countries
+       .FirstOrDefaultAsync(c => c.CountryName == name);
+
+        if (country == null)
+        {
+            country = new Country { CountryName = name };
+            await _context.Countries.AddAsync(country);
+            await _context.SaveChangesAsync();
+        }
+        return country;
+    } 
 }
