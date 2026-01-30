@@ -87,15 +87,19 @@ public class WorldCityRepository : IWorldCityRepository
         return newCity;
     }
 
-    public async Task<WorldCity?> UpdateCity(int id, UpdateCityDto city)
+    public async Task<WorldCity?> UpdateCity(int id, UpdateCityDto cityDto)
     {
         var existingCity = await _context.WorldCities.FirstOrDefaultAsync(c => c.CityId == id);
 
         if (existingCity == null) return null;
 
-        existingCity.CityName = city.CityName;
-        //existingCity.CountryId = city.CountryId;
-        existingCity.Population = city.Population;
+        var normalizedCountryName = Utilities.Normalize(cityDto.Country);
+
+        var country = await GetOrCreateCountry(normalizedCountryName);
+
+        existingCity.CityName = cityDto.CityName;
+        existingCity.CountryId = country.CountryId;
+        existingCity.Population = cityDto.Population;
 
         await _context.SaveChangesAsync();
 
