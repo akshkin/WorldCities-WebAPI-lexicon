@@ -40,7 +40,8 @@ namespace WebAPIWorldCities.Controllers
         [HttpPost]
         public async Task<ActionResult<WorldCityDto>> CreateCity(CreateWorldCityDto cityDto)
         {
-            var city = cityDto.ToCityFromDto();
+            //temporary fill in id 1 to allow successful build
+            var city = cityDto.ToCityFromDto(1);
 
             await _worldCityRepo.CreateCity(city);
 

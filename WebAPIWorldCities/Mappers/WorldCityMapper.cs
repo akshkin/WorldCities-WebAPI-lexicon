@@ -11,17 +11,17 @@ public static class WorldCityMapper
         {
             CityId = city.CityId,
             CityName = city.CityName,
-            Country = city.Country,
+            Country = city.Country.CountryName,
             Population = city.Population,
         };
     }
 
-    public static WorldCity ToCityFromDto(this CreateWorldCityDto worldCityDto) 
+    public static WorldCity ToCityFromDto(this CreateWorldCityDto worldCityDto, int countryId) 
     {
         return new WorldCity
         {
             CityName = worldCityDto.CityName,
-            Country = worldCityDto.Country,
+            CountryId = countryId,
             Population = worldCityDto.Population,
         };
     }

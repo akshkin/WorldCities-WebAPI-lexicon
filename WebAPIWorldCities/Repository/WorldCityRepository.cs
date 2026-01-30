@@ -28,7 +28,7 @@ public class WorldCityRepository : IWorldCityRepository
 
         if (!string.IsNullOrEmpty(query.Country))
         {
-            cities = cities.Where(c => c.Country.Contains(query.Country));
+            cities = cities.Where(c => c.Country.CountryName.Contains(query.Country));
         }
 
         if (query.PopulationGreaterThan != null)
@@ -81,7 +81,7 @@ public class WorldCityRepository : IWorldCityRepository
         if (existingCity == null) return null;
 
         existingCity.CityName = city.CityName;
-        existingCity.Country = city.Country;
+        //existingCity.CountryId = city.CountryId;
         existingCity.Population = city.Population;
 
         await _context.SaveChangesAsync();
