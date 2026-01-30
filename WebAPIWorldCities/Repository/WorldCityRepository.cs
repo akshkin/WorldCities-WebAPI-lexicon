@@ -21,7 +21,7 @@ public class WorldCityRepository : IWorldCityRepository
 
     public async Task<IEnumerable<WorldCityDto>> GetAllCities(QueryObject query)
     {
-        var cities = _context.WorldCities.AsQueryable();
+        var cities = _context.WorldCities.Include(c => c.Country).AsQueryable();
 
         if (!string.IsNullOrEmpty(query.Name))
         {
@@ -46,8 +46,8 @@ public class WorldCityRepository : IWorldCityRepository
                 CitySortOption.PopulationAsc => cities.OrderBy(c => c.Population),
                 CitySortOption.NameDesc => cities.OrderByDescending(c => c.CityName),
                 CitySortOption.NameAsc=> cities.OrderBy(c => c.CityName),
-                CitySortOption.CountryDesc => cities.OrderByDescending(c => c.Country),
-                CitySortOption.CountryAsc => cities.OrderBy(c => c.Country),
+                CitySortOption.CountryDesc => cities.OrderByDescending(c => c.Country.CountryName),
+                CitySortOption.CountryAsc => cities.OrderBy(c => c.Country.CountryName),
                 _ => cities.OrderByDescending(c => c.Population)
             };
         }
@@ -61,7 +61,7 @@ public class WorldCityRepository : IWorldCityRepository
 
     public async Task<WorldCityDto?> GetById(int id)
     {
-        var city = await _context.WorldCities.FindAsync(id);
+        var city = await _context.WorldCities.Include(c => c.Country).FirstOrDefaultAsync(c => c.CountryId == id);
 
         if (city == null) return null;
 
