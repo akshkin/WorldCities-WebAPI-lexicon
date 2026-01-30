@@ -223,6 +223,22 @@
   },
   {
     "ContainingType": "WebAPIWorldCities.Controllers.CountriesController",
+    "Method": "DeleteCountry",
+    "RelativePath": "api/countries/delete/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPIWorldCities.Controllers.CountriesController",
     "Method": "PUpdateCountry",
     "RelativePath": "api/countries/update/{id}",
     "HttpMethod": "POST",

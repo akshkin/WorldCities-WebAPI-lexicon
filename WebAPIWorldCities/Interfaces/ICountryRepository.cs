@@ -11,5 +11,7 @@ public interface ICountryRepository
 
     public Task<Country> CreateCountry(CreateCountryDto createCountryDto);
 
-    public Task<Country> UpdateCountry(int id, UpdateCountryDto countryDto);
+    public Task<Country?> UpdateCountry(int id, UpdateCountryDto countryDto);
+
+    public Task<Country?> DeleteCountry(int id);
 }

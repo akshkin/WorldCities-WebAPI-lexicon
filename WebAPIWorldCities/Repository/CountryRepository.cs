@@ -73,4 +73,22 @@ public class CountryRepository : ICountryRepository
         return existingCountry;
 
     }
+
+    public async Task<Country?> DeleteCountry(int id)
+    {
+        var country = await _context.Countries.Include(c => c.Cities).FirstOrDefaultAsync(c => c.CountryId == id);
+
+        if (country == null) return null;
+
+        if (country.Cities.Count > 0)
+        {
+            throw new InvalidOperationException($"Cannot delete country as there are {country.Cities.Count} cities in the country");       
+        }
+        else
+        {
+            _context.Countries.Remove(country);
+            await _context.SaveChangesAsync();
+        }
+        return country;
+    }
 }

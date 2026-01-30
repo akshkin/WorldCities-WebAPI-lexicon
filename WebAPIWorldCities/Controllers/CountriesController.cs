@@ -67,25 +67,31 @@ namespace WebAPIWorldCities.Controllers
             return CreatedAtAction(nameof(GetCountry), new { id = country.CountryId }, country.ToCountryDto());
         }
 
-        //    // DELETE: api/Countries/5
-        //    [HttpDelete("{id}")]
-        //    public async Task<IActionResult> DeleteCountry(int id)
-        //    {
-        //        var country = await _context.Countries.FindAsync(id);
-        //        if (country == null)
-        //        {
-        //            return NotFound();
-        //        }
+        // DELETE: api/Countries/5
+        [HttpPost("delete/{id}")]
+        public async Task<IActionResult> DeleteCountry(int id)
+        {
+            try
+            {
+                var country = await _countryRepo.DeleteCountry(id);
 
-        //        _context.Countries.Remove(country);
-        //        await _context.SaveChangesAsync();
+                if (country == null)
+                {
+                    return NotFound();
+                }
 
-        //        return NoContent();
-        //    }
+                return NoContent();
 
-        //    private bool CountryExists(int id)
-        //    {
-        //        return _context.Countries.Any(e => e.CountryId == id);
-        //    }
+            }
+            catch (Exception ex) 
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+            //private bool CountryExists(int id)
+            //{
+            //    return _context.Countries.Any(e => e.CountryId == id);
+            //}
     }
 }
