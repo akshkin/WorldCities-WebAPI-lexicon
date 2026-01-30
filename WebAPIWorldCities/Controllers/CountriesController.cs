@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using WebAPIWorldCities.Data;
 using WebAPIWorldCities.DTOs.Country;
 using WebAPIWorldCities.Interfaces;
+using WebAPIWorldCities.Mappers;
 using WebAPIWorldCities.Models;
 using WebAPIWorldCities.Repository;
 
@@ -77,16 +78,14 @@ namespace WebAPIWorldCities.Controllers
         //        return NoContent();
         //    }
 
-        //    // POST: api/Countries
-        //    // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //    [HttpPost]
-        //    public async Task<ActionResult<Country>> PostCountry(Country country)
-        //    {
-        //        _context.Countries.Add(country);
-        //        await _context.SaveChangesAsync();
-
-        //        return CreatedAtAction("GetCountry", new { id = country.CountryId }, country);
-        //    }
+        // POST: api/Countries
+        [HttpPost]
+        public async Task<ActionResult<Country>> PostCountry(CreateCountryDto countryDto)
+        {
+            var country = await _countryRepo.CreateCountry(countryDto);
+           
+            return CreatedAtAction(nameof(GetCountry), new { id = country.CountryId }, country.ToCountryDto());
+        }
 
         //    // DELETE: api/Countries/5
         //    [HttpDelete("{id}")]

@@ -41,6 +41,52 @@
             }
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Countries"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCountryDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCountryDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCountryDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Country"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Country"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Country"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/api/countries/{id}": {
@@ -350,6 +396,31 @@
         ],
         "type": "string"
       },
+      "Country": {
+        "required": [
+          "countryName"
+        ],
+        "type": "object",
+        "properties": {
+          "countryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "countryName": {
+            "maxLength": 100,
+            "minLength": 2,
+            "type": "string"
+          },
+          "cities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorldCity"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CountryDto": {
         "type": "object",
         "properties": {
@@ -360,6 +431,20 @@
           "countryName": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateCountryDto": {
+        "required": [
+          "countryName"
+        ],
+        "type": "object",
+        "properties": {
+          "countryName": {
+            "maxLength": 100,
+            "minLength": 2,
+            "type": "string"
           }
         },
         "additionalProperties": false
@@ -408,6 +493,39 @@
             "maxLength": 100,
             "minLength": 2,
             "type": "string"
+          },
+          "population": {
+            "maximum": 2147483647,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorldCity": {
+        "required": [
+          "cityName",
+          "countryId",
+          "population"
+        ],
+        "type": "object",
+        "properties": {
+          "cityId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cityName": {
+            "maxLength": 100,
+            "minLength": 2,
+            "type": "string"
+          },
+          "countryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "country": {
+            "$ref": "#/components/schemas/Country"
           },
           "population": {
             "maximum": 2147483647,

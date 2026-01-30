@@ -171,6 +171,32 @@
   },
   {
     "ContainingType": "WebAPIWorldCities.Controllers.CountriesController",
+    "Method": "PostCountry",
+    "RelativePath": "api/countries",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "countryDto",
+        "Type": "WebAPIWorldCities.DTOs.Country.CreateCountryDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIWorldCities.Models.Country",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIWorldCities.Controllers.CountriesController",
     "Method": "GetCountry",
     "RelativePath": "api/countries/{id}",
     "HttpMethod": "GET",
