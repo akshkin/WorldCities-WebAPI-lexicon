@@ -20,4 +20,13 @@ public class CountryRepository : ICountryRepository
         var countries = await _context.Countries.ToListAsync();
         return countries.Select(c => c.ToCountryDto());
     }
+
+    public async Task<CountryDto?> GetCountryById(int id)
+    {
+        var country = await _context.Countries.FindAsync(id);
+
+        if (country == null) return null;
+
+        return country.ToCountryDto();
+    }
 }
