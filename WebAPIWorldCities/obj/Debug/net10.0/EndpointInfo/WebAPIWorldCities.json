@@ -5,6 +5,44 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/countries": {
+      "get": {
+        "tags": [
+          "Countries"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/cities": {
       "get": {
         "tags": [
@@ -272,6 +310,20 @@
         ],
         "type": "string"
       },
+      "CountryDto": {
+        "type": "object",
+        "properties": {
+          "countryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "countryName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateWorldCityDto": {
         "required": [
           "cityName",
@@ -351,6 +403,9 @@
     }
   },
   "tags": [
+    {
+      "name": "Countries"
+    },
     {
       "name": "WorldCities"
     }
