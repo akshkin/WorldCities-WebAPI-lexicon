@@ -1,10 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Humanizer;
+using Microsoft.EntityFrameworkCore;
 using Models;
 using WebAPIWorldCities.Data;
 using WebAPIWorldCities.DTOs;
 using WebAPIWorldCities.Helpers;
 using WebAPIWorldCities.Interfaces;
 using WebAPIWorldCities.Mappers;
+using WebAPIWorldCities.Models;
 
 namespace WebAPIWorldCities.Repository;
 
@@ -67,11 +69,22 @@ public class WorldCityRepository : IWorldCityRepository
 
     }
 
-    public async Task<WorldCity> CreateCity(WorldCity city)
+    public async Task<WorldCity> CreateCity(CreateWorldCityDto cityDto)
     {
-        await _context.WorldCities.AddAsync(city);
+        var normalized = Utilities.Normalize(cityDto.Country);
+
+        var country = await GetOrCreateCountry(normalized);
+
+        var newCity = new WorldCity
+        {
+            CityName = cityDto.CityName,
+            Population = cityDto.Population,
+            CountryId = country.CountryId
+        };
+
+        await _context.WorldCities.AddAsync(newCity);
         await _context.SaveChangesAsync();
-        return city;
+        return newCity;
     }
 
     public async Task<WorldCity?> UpdateCity(int id, UpdateCityDto city)
@@ -101,4 +114,18 @@ public class WorldCityRepository : IWorldCityRepository
 
         return city;
     }
+
+    public async Task<Country> GetOrCreateCountry(string name)
+    {
+        var country = await _context.Countries
+       .FirstOrDefaultAsync(c => c.CountryName == name);
+
+        if (country == null)
+        {
+            country = new Country { CountryName = name };
+            await _context.Countries.AddAsync(country);
+            await _context.SaveChangesAsync();
+        }
+        return country;
+    } 
 }

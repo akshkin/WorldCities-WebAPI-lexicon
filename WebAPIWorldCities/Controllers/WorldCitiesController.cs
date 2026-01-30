@@ -4,6 +4,7 @@ using WebAPIWorldCities.DTOs;
 using WebAPIWorldCities.Helpers;
 using WebAPIWorldCities.Interfaces;
 using WebAPIWorldCities.Mappers;
+using WebAPIWorldCities.Models;
 
 namespace WebAPIWorldCities.Controllers
 {
@@ -40,10 +41,7 @@ namespace WebAPIWorldCities.Controllers
         [HttpPost]
         public async Task<ActionResult<WorldCityDto>> CreateCity(CreateWorldCityDto cityDto)
         {
-            //temporary fill in id 1 to allow successful build
-            var city = cityDto.ToCityFromDto(1);
-
-            await _worldCityRepo.CreateCity(city);
+           var city = await _worldCityRepo.CreateCity(cityDto);
 
             return CreatedAtAction(nameof(GetCityById), new { id = city.CityId }, city.ToWorldCityDto());
         }
