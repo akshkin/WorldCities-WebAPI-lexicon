@@ -17,7 +17,7 @@ public class WorldCity
     public string CityName 
     { 
         get => _cityName; 
-        set => _cityName = Utilities.Normalize(_cityName);    
+        set => _cityName = Utilities.Normalize(value);    
     }
 
     [Required]

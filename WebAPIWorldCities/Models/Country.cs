@@ -16,7 +16,7 @@ public class Country
     public string CountryName 
     { 
         get => _countryName; 
-        set => _countryName = Utilities.Normalize(_countryName); 
+        set => _countryName = Utilities.Normalize(value); 
     }
 
     public List<WorldCity> Cities { get; set; } = new List<WorldCity>();

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAPIWorldCities.Data;
 
@@ -10,9 +11,11 @@ using WebAPIWorldCities.Data;
 namespace WebAPIWorldCities.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260130091847_AddCountryTable")]
+    partial class AddCountryTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,21 +53,21 @@ namespace WebAPIWorldCities.Migrations
                         new
                         {
                             CityId = 1,
-                            CityName = "Gdansk",
+                            CityName = "",
                             CountryId = 3,
                             Population = 487370
                         },
                         new
                         {
                             CityId = 2,
-                            CityName = "Malmö",
+                            CityName = "",
                             CountryId = 1,
                             Population = 339320
                         },
                         new
                         {
                             CityId = 3,
-                            CityName = "Bergen",
+                            CityName = "",
                             CountryId = 4,
                             Population = 294029
                         });
@@ -91,22 +94,22 @@ namespace WebAPIWorldCities.Migrations
                         new
                         {
                             CountryId = 1,
-                            CountryName = "Sweden"
+                            CountryName = ""
                         },
                         new
                         {
                             CountryId = 2,
-                            CountryName = "Denmark"
+                            CountryName = ""
                         },
                         new
                         {
                             CountryId = 3,
-                            CountryName = "Poland"
+                            CountryName = ""
                         },
                         new
                         {
                             CountryId = 4,
-                            CountryName = "Norway"
+                            CountryName = ""
                         });
                 });
 
