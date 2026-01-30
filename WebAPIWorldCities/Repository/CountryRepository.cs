@@ -54,4 +54,23 @@ public class CountryRepository : ICountryRepository
         return country;
     }
 
+    public async Task<Country?> UpdateCountry(int id, UpdateCountryDto countryDto)
+    {
+        var existingCountry = await _context.Countries.FirstOrDefaultAsync(c => c.CountryId == id);
+
+        if (existingCountry == null) return null;
+      
+        var normalizedCountryName = Utilities.Normalize(countryDto.CountryName);
+
+        //check if another country with same name exists
+        var duplicateCountry = await _context.Countries.AnyAsync(c => c.CountryName == normalizedCountryName && c.CountryId != id);
+
+        if (duplicateCountry) return null;
+
+        existingCountry.CountryName = normalizedCountryName;
+        await _context.SaveChangesAsync();
+
+        return existingCountry;
+
+    }
 }

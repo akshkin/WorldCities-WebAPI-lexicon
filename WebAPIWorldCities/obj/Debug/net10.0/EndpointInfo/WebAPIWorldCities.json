@@ -129,6 +129,48 @@
         }
       }
     },
+    "/api/countries/update/{id}": {
+      "post": {
+        "tags": [
+          "Countries"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCountryDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCountryDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCountryDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/cities": {
       "get": {
         "tags": [
@@ -499,6 +541,20 @@
             "minimum": 0,
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateCountryDto": {
+        "required": [
+          "countryName"
+        ],
+        "type": "object",
+        "properties": {
+          "countryName": {
+            "maxLength": 100,
+            "minLength": 2,
+            "type": "string"
           }
         },
         "additionalProperties": false

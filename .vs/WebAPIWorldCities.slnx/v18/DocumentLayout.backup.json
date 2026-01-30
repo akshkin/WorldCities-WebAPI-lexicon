@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|c:\\users\\aksh\\documents\\lexicon\\c-sharp\\webapiworldcities\\webapiworldcities\\controllers\\countriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|solutionrelative:webapiworldcities\\controllers\\countriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|c:\\users\\aksh\\documents\\lexicon\\c-sharp\\webapiworldcities\\webapiworldcities\\repository\\countryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|solutionrelative:webapiworldcities\\repository\\countryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|c:\\users\\aksh\\documents\\lexicon\\c-sharp\\webapiworldcities\\webapiworldcities\\repository\\worldcityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|solutionrelative:webapiworldcities\\repository\\worldcityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|c:\\users\\aksh\\documents\\lexicon\\c-sharp\\webapiworldcities\\webapiworldcities\\interfaces\\icountryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|solutionrelative:webapiworldcities\\interfaces\\icountryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|c:\\users\\aksh\\documents\\lexicon\\c-sharp\\webapiworldcities\\webapiworldcities\\controllers\\countriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|solutionrelative:webapiworldcities\\controllers\\countriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|c:\\users\\aksh\\documents\\lexicon\\c-sharp\\webapiworldcities\\webapiworldcities\\dtos\\country\\updatecountrydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|solutionrelative:webapiworldcities\\dtos\\country\\updatecountrydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|c:\\users\\aksh\\documents\\lexicon\\c-sharp\\webapiworldcities\\webapiworldcities\\repository\\worldcityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|solutionrelative:webapiworldcities\\repository\\worldcityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|c:\\users\\aksh\\documents\\lexicon\\c-sharp\\webapiworldcities\\webapiworldcities\\dtos\\country\\createcountrydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|solutionrelative:webapiworldcities\\dtos\\country\\createcountrydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|c:\\users\\aksh\\documents\\lexicon\\c-sharp\\webapiworldcities\\webapiworldcities\\dtos\\updatecitydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|solutionrelative:webapiworldcities\\dtos\\updatecitydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|c:\\users\\aksh\\documents\\lexicon\\c-sharp\\webapiworldcities\\webapiworldcities\\dtos\\createworldcitydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|solutionrelative:webapiworldcities\\dtos\\createworldcitydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|c:\\users\\aksh\\documents\\lexicon\\c-sharp\\webapiworldcities\\webapiworldcities\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,14 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|c:\\users\\aksh\\documents\\lexicon\\c-sharp\\webapiworldcities\\webapiworldcities\\models\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|solutionrelative:webapiworldcities\\models\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|c:\\users\\aksh\\documents\\lexicon\\c-sharp\\webapiworldcities\\webapiworldcities\\dtos\\country\\createcountrydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|solutionrelative:webapiworldcities\\dtos\\country\\createcountrydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|c:\\users\\aksh\\documents\\lexicon\\c-sharp\\webapiworldcities\\webapiworldcities\\dtos\\createworldcitydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9624ADAE-B128-0F18-1ED6-2D7D04B043AF}|WebAPIWorldCities\\WebAPIWorldCities.csproj|solutionrelative:webapiworldcities\\dtos\\createworldcitydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,63 +82,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CountriesController.cs",
-              "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Controllers\\CountriesController.cs",
-              "RelativeDocumentMoniker": "WebAPIWorldCities\\Controllers\\CountriesController.cs",
-              "ToolTip": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Controllers\\CountriesController.cs",
-              "RelativeToolTip": "WebAPIWorldCities\\Controllers\\CountriesController.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAA8wCUAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T11:00:44.169Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CountryRepository.cs",
               "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Repository\\CountryRepository.cs",
               "RelativeDocumentMoniker": "WebAPIWorldCities\\Repository\\CountryRepository.cs",
               "ToolTip": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Repository\\CountryRepository.cs*",
               "RelativeToolTip": "WebAPIWorldCities\\Repository\\CountryRepository.cs*",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAgwCYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAvwEgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-30T10:51:03.335Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ICountryRepository.cs",
-              "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Interfaces\\ICountryRepository.cs",
-              "RelativeDocumentMoniker": "WebAPIWorldCities\\Interfaces\\ICountryRepository.cs",
-              "ToolTip": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Interfaces\\ICountryRepository.cs",
-              "RelativeToolTip": "WebAPIWorldCities\\Interfaces\\ICountryRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "CountriesController.cs",
+              "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Controllers\\CountriesController.cs",
+              "RelativeDocumentMoniker": "WebAPIWorldCities\\Controllers\\CountriesController.cs",
+              "ToolTip": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Controllers\\CountriesController.cs*",
+              "RelativeToolTip": "WebAPIWorldCities\\Controllers\\CountriesController.cs*",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAgwDcAAACZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T10:49:34.3Z",
+              "WhenOpened": "2026-01-30T11:00:44.169Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Program.cs",
-              "RelativeDocumentMoniker": "WebAPIWorldCities\\Program.cs",
-              "ToolTip": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Program.cs",
-              "RelativeToolTip": "WebAPIWorldCities\\Program.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAawBwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T11:05:40.253Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "WorldCityRepository.cs",
               "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Repository\\WorldCityRepository.cs",
               "RelativeDocumentMoniker": "WebAPIWorldCities\\Repository\\WorldCityRepository.cs",
@@ -143,7 +121,84 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ICountryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Interfaces\\ICountryRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIWorldCities\\Interfaces\\ICountryRepository.cs",
+              "ToolTip": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Interfaces\\ICountryRepository.cs",
+              "RelativeToolTip": "WebAPIWorldCities\\Interfaces\\ICountryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T10:49:34.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UpdateCountryDto.cs",
+              "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\DTOs\\Country\\UpdateCountryDto.cs",
+              "RelativeDocumentMoniker": "WebAPIWorldCities\\DTOs\\Country\\UpdateCountryDto.cs",
+              "ToolTip": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\DTOs\\Country\\UpdateCountryDto.cs",
+              "RelativeToolTip": "WebAPIWorldCities\\DTOs\\Country\\UpdateCountryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T11:41:04.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "CreateCountryDto.cs",
+              "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\DTOs\\Country\\CreateCountryDto.cs",
+              "RelativeDocumentMoniker": "WebAPIWorldCities\\DTOs\\Country\\CreateCountryDto.cs",
+              "ToolTip": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\DTOs\\Country\\CreateCountryDto.cs",
+              "RelativeToolTip": "WebAPIWorldCities\\DTOs\\Country\\CreateCountryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T10:37:39.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UpdateCityDto.cs",
+              "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\DTOs\\UpdateCityDto.cs",
+              "RelativeDocumentMoniker": "WebAPIWorldCities\\DTOs\\UpdateCityDto.cs",
+              "ToolTip": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\DTOs\\UpdateCityDto.cs",
+              "RelativeToolTip": "WebAPIWorldCities\\DTOs\\UpdateCityDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T11:40:27.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateWorldCityDto.cs",
+              "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\DTOs\\CreateWorldCityDto.cs",
+              "RelativeDocumentMoniker": "WebAPIWorldCities\\DTOs\\CreateWorldCityDto.cs",
+              "ToolTip": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\DTOs\\CreateWorldCityDto.cs",
+              "RelativeToolTip": "WebAPIWorldCities\\DTOs\\CreateWorldCityDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T09:03:11.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Program.cs",
+              "RelativeDocumentMoniker": "WebAPIWorldCities\\Program.cs",
+              "ToolTip": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Program.cs",
+              "RelativeToolTip": "WebAPIWorldCities\\Program.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAawBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T11:05:40.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "CountryMapper.cs",
               "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Mappers\\CountryMapper.cs",
               "RelativeDocumentMoniker": "WebAPIWorldCities\\Mappers\\CountryMapper.cs",
@@ -151,12 +206,11 @@
               "RelativeToolTip": "WebAPIWorldCities\\Mappers\\CountryMapper.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T10:44:44.956Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-30T10:44:44.956Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "WorldCitiesController.cs",
               "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Controllers\\WorldCitiesController.cs",
               "RelativeDocumentMoniker": "WebAPIWorldCities\\Controllers\\WorldCitiesController.cs",
@@ -168,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "IWorldCityRepository.cs",
               "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Interfaces\\IWorldCityRepository.cs",
               "RelativeDocumentMoniker": "WebAPIWorldCities\\Interfaces\\IWorldCityRepository.cs",
@@ -180,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "WorldCityMapper.cs",
               "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Mappers\\WorldCityMapper.cs",
               "RelativeDocumentMoniker": "WebAPIWorldCities\\Mappers\\WorldCityMapper.cs",
@@ -192,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "CountryDto.cs",
               "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\DTOs\\Country\\CountryDto.cs",
               "RelativeDocumentMoniker": "WebAPIWorldCities\\DTOs\\Country\\CountryDto.cs",
@@ -204,7 +258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "CountryWithCitiesDto.cs",
               "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\DTOs\\Country\\CountryWithCitiesDto.cs",
               "RelativeDocumentMoniker": "WebAPIWorldCities\\DTOs\\Country\\CountryWithCitiesDto.cs",
@@ -216,7 +270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "Country.cs",
               "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\Models\\Country.cs",
               "RelativeDocumentMoniker": "WebAPIWorldCities\\Models\\Country.cs",
@@ -225,30 +279,6 @@
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-30T10:38:00.099Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CreateCountryDto.cs",
-              "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\DTOs\\Country\\CreateCountryDto.cs",
-              "RelativeDocumentMoniker": "WebAPIWorldCities\\DTOs\\Country\\CreateCountryDto.cs",
-              "ToolTip": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\DTOs\\Country\\CreateCountryDto.cs",
-              "RelativeToolTip": "WebAPIWorldCities\\DTOs\\Country\\CreateCountryDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T10:37:39.389Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CreateWorldCityDto.cs",
-              "DocumentMoniker": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\DTOs\\CreateWorldCityDto.cs",
-              "RelativeDocumentMoniker": "WebAPIWorldCities\\DTOs\\CreateWorldCityDto.cs",
-              "ToolTip": "C:\\Users\\aksh\\Documents\\lexicon\\c-sharp\\WebAPIWorldCities\\WebAPIWorldCities\\DTOs\\CreateWorldCityDto.cs",
-              "RelativeToolTip": "WebAPIWorldCities\\DTOs\\CreateWorldCityDto.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T09:03:11.949Z"
             }
           ]
         }

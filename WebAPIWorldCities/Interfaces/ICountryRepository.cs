@@ -10,4 +10,6 @@ public interface ICountryRepository
     public Task<CountryDto> GetCountryById(int id);
 
     public Task<Country> CreateCountry(CreateCountryDto createCountryDto);
+
+    public Task<Country> UpdateCountry(int id, UpdateCountryDto countryDto);
 }

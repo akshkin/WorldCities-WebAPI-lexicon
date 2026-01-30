@@ -47,36 +47,16 @@ namespace WebAPIWorldCities.Controllers
             return Ok(country);
         }
 
-        //    // PUT: api/Countries/5
-        //    // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //    [HttpPut("{id}")]
-        //    public async Task<IActionResult> PutCountry(int id, Country country)
-        //    {
-        //        if (id != country.CountryId)
-        //        {
-        //            return BadRequest();
-        //        }
+        // UPDATE a country using POST
+       [HttpPost("update/{id}")]
+        public async Task<IActionResult> PUpdateCountry(int id, UpdateCountryDto countryDto)
+        {
+            var existingCountry = await _countryRepo.UpdateCountry(id, countryDto);
 
-        //        _context.Entry(country).State = EntityState.Modified;
+            if (existingCountry == null) return NotFound($"Country with id: {id} not found OR a country with name {countryDto.CountryName} already exists" );
 
-        //        try
-        //        {
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!CountryExists(id))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-
-        //        return NoContent();
-        //    }
+            return Ok(existingCountry.ToCountryDto());
+        }
 
         // POST: api/Countries
         [HttpPost]
